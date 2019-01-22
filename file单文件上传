@@ -1,0 +1,18 @@
+<?php
+ //单文件上传（缩略图，照片直接放在缩略图中）
+        $file = request()->file('image');
+            if($file){
+            $info=$file->move("static/public/uploads");
+            if($info){
+                $imageth="static/public/uploads/".$info->getSaveName();
+            }else{
+                $info->getError();
+            }
+        }else{
+            $imageth="";
+
+
+
+
+
+?>
